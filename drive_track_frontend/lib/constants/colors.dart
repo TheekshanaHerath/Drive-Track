@@ -12,4 +12,10 @@ class AppColors {
 
   //input label Color
   static const labeltextBlack = Color.fromARGB(255, 143, 148, 154);
+
+  //login bg color
+  static const loginBgColor = Color.fromARGB(255, 243, 246, 248);
+
+  //text field boarder color
+  static const textFieldBorderColor = Color.fromARGB(255, 242, 242, 242);
 }

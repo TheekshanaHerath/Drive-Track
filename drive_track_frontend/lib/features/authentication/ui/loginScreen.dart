@@ -1,39 +1,43 @@
 import 'package:drive_track_frontend/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class Loginscreen extends StatefulWidget {
+  const Loginscreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<Loginscreen> createState() => _LoginscreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
 
+class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    // double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.loginBgColor,
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
               flex: 1,
-              child: Image.asset('assets/images/signUp_image.jpg'),
+              child: Center(
+                child: SizedBox(
+                  width: screenWidth - 100,
+                  child: Lottie.asset('assets/animation/loginAnimation.json'),
+                ),
+              ),
             ),
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Container(
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                 width: screenWidth,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 decoration: BoxDecoration(
-                  color: AppColors.signUpAccentColor,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25),
@@ -43,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sign Up',
+                      'Login',
                       style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.w500,
@@ -51,28 +55,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: AppColors.fontColorBlack,
                       ),
                     ),
-                    SizedBox(height: 25),
-                    TextField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
-                        label: Text(
-                          'Name',
+                    Row(
+                      children: [
+                        Text(
+                          'Welcome back to',
                           style: TextStyle(
-                            color: AppColors.labeltextBlack,
+                            color: Colors.black,
                             fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w300,
+                            fontSize: 14,
                           ),
                         ),
-                      ),
+                        SizedBox(width: 5),
+                        Text(
+                          'My Task',
+                          style: TextStyle(
+                            color: AppColors.accentColor,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w300,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 25),
                     TextField(
@@ -82,11 +86,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fillColor: Colors.white,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                            color: AppColors.textFieldBorderColor,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                            color: AppColors.textFieldBorderColor,
+                          ),
                         ),
                         label: Text(
                           'Email',
@@ -105,11 +113,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fillColor: Colors.white,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                            color: AppColors.textFieldBorderColor,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                            color: AppColors.textFieldBorderColor,
+                          ),
                         ),
                         label: Text(
                           'Password',
@@ -120,7 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 20),
                     Container(
                       width: screenWidth,
                       height: 55,
@@ -130,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          'Sign Up',
+                          'Login',
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'Poppins',
@@ -139,11 +151,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         Text(
-                          'Already have an account ?',
+                          'dont have an account',
                           style: TextStyle(
                             color: Colors.black,
                             fontFamily: 'Poppins',
@@ -151,9 +163,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontSize: 14,
                           ),
                         ),
-                        SizedBox(width: 25),
+                        SizedBox(width: 5),
                         Text(
-                          'Login',
+                          'Sign Up',
                           style: TextStyle(
                             color: AppColors.accentColor,
                             fontFamily: 'Poppins',
