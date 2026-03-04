@@ -18,4 +18,7 @@ class AppColors {
 
   //text field boarder color
   static const textFieldBorderColor = Color.fromARGB(255, 242, 242, 242);
+
+  //progress bg color
+  static const progressBgColor = Color.fromARGB(255, 14, 19, 15);
 }
